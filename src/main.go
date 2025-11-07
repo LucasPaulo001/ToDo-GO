@@ -3,6 +3,8 @@ package main
 import (
 	"log"
 	"os"
+
+	"github.com/LucasPaulo001/ToDo-GO/src/routes"
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
 )
@@ -14,6 +16,7 @@ func main(){
 	}
 
 	router := gin.Default()
+	routes.InitRoutes(router)
 
 	PORT := os.Getenv("PORT")
 	router.Run(":"+PORT)
